@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="open">Open</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat totam perspiciatis pariatur? Repellendus, similique repudiandae accusantium atque modi illum ut. Perferendis ducimus consequuntur ipsam laudantium iure recusandae alias! Omnis, tempora.</p>
+
+    Name: <input type="text" id="input01"><br>
+    <button id="sub">Submit</button>
+    <h4 id="h4a"></h4>
+</body>
+    <!-- Use jQuery below body tag so that you don't have to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $("#open").click(function() {
+           $('p').slideToggle(200,function() {
+              var a = $("#open").text();
+              if(a == 'Open'){
+                  $("#open").text('Close');
+              } else{
+                  $("#open").text('Open');
+              }
+           }); 
+        });
+        $("#sub").click(function(){
+            var b = $("#input01").val();
+            var c = document.getElementById("h4a");
+            c.innerHTML += "User name is " + b;
+        });
+    </script>
+    <script>
+        
+    </script>
+</html>

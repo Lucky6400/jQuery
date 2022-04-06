@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        background-color: brown;
+        cursor: pointer;
+        color: aliceblue;
+        padding: 10px;
+        border-radius: 9px;
+    }
+</style>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At odio impedit magni soluta tempora adipisci aspernatur ratione voluptates cumque, dignissimos delectus maiores velit ea. Eum eveniet incidunt ex nemo velit.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aut amet in molestias consectetur, repellat eius sit incidunt soluta quis quasi. Officia iure earum quis repudiandae aliquam odio, nostrum placeat.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ipsa modi explicabo voluptas, amet eveniet enim aut culpa accusamus. Obcaecati fugiat dolorem quasi error. Nobis nisi rerum tenetur itaque molestiae.
+    </p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum illum numquam, officiis fugiat odio, officia veritatis qui explicabo voluptates quidem quod voluptatum autem facilis. Non fugit quasi excepturi magni repellat!
+    </p>
+    <h5 id="h5"></h5>
+</body>
+    <!-- Use jQuery below body tag so that you don't have to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $('p').each(function(event){
+            $(this).on('click',{x:event},
+                function(event01){
+                    var a =document.getElementById('h5');
+                    a.innerHTML += event01.data.x;
+                }
+            );
+        });
+    </script>
+</html>

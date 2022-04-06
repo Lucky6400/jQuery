@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+<style>
+    #circle-box{
+        margin: auto;
+        width: 300px;
+        height: 200px;
+        background: rgba(200, 150, 150, 0.2);
+        box-shadow: 0px 10px grey;
+    }
+    #switch{
+        width: 150px;
+        height: 200px;
+        float: left;
+        padding: 80px 0px 0px 50px;
+        font-size: 30px;
+        color: white;
+        background: red;
+        cursor: pointer;
+    }
+    .bulb{
+        width: 100px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="circle-box">
+            <div id="switch" data-status="0">
+                Off
+            </div>
+            <div style="clear: both;"> </div>
+            <div class="bulb">
+                <img src="images/OFFbulb.jpg" id="bulbImage" alt="">
+            </div>
+        </div>
+    </div>    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script>
+    $("#switch").click(function(){
+        var status = $(this).data('status'); // To check the current status of the bulb
+        if(status==1){
+            $(this).data("status",0);
+            $(this).css(
+                {
+                    'background':'red',
+                    'float':'left',
+
+                }
+
+            );
+            $(this).text('off');
+            $("#bulbImage").attr('src','images/OFFbulb.jpg');
+        }else{
+            $(this).data("status",1);
+            $(this).css(
+                {
+                    'background':'green',
+                    'float':'right',      
+                }
+
+            );
+            $(this).text('on');
+            $("#bulbImage").attr('src','images/ONbulb.jpg');
+        }
+
+
+    });
+</script>
+</html>

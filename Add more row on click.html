@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I agree validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row card">
+            <h4 style="display: none;" class="text-center text-danger pt-1" id="error-msg">Maximum 10 rows are allowed.</h4>
+            <div class="col-md-12">
+                <table class="table items">
+                    <thead>
+                        <tr>
+                            <td class="required" width="33.33%"><label for="">Title</label></td>
+                            <td class="required" width="99.66%"><label for="">Description</label></td>
+                            <td align="center"> Action </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" autocomplete="off" required="" maxlength="100" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" autocomplete="off" required="" maxlength="2000" class="form-control">
+                            </td>
+                            <td><button class="btn btn-info" id="addrow">Add row</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</body>
+    <!-- Use jQuery below body tag so that you don't have to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
+    </script>
+    <script>
+          var rows = 1;
+          var $tbody = $('tbody');
+          $('#addrow').click(function(){
+                if(rows == 10){
+                    $('#error-msg').slideDown(500);
+                    return;
+                }else{
+                    var newRow = `<tr>
+                            <td>
+                                <input type="text" autocomplete="off" required="" maxlength="100" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" autocomplete="off" required="" maxlength="2000" class="form-control">
+                            </td>
+                            <td><button class="btn btn-danger remove" id="addrow">Remove</button></td>
+                        </tr>`;
+                        $tbody.append(newRow);
+                        rows++;
+                }
+
+
+          });
+          $('tbody').on('click','.remove',function(){
+                rows--;
+                $('#error-msg').slideUp(500);
+                $(this).closest('tr').remove();
+
+
+
+
+
+          });
+    </script>
+</html>

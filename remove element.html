@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div01" style="border: 2px solid red; height: 200px; width:200px; margin: auto; text-align: center;">
+    <h1>Hello</h1>
+    
+    </div>
+
+    <div style="text-align: center; margin-top: 4px;">
+        <button id="append">Append</button>
+        <button id="prepend">Prepend</button>
+        <button id="remove">Remove</button>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $("#append").click(function () {
+           $("#div01").append("<h1> Everyone </h1>"); 
+        });
+        $("#prepend").click(function () {
+           $("#div01").prepend("<h1> Everyone </h1>"); 
+        });
+        $("#remove").click(function () {
+           $("#div01").remove(); 
+        });
+    </script>
+</html>

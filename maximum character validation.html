@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+</head>
+<style>
+    .form-control:focus{
+        box-shadow: none;
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center">
+            <ws class="text-danger">AndroidClassic</ws> Blog Post
+        </h3>
+        <div class="card pt-3">
+            <div class="col-md-12">
+                <div class="form-group required">
+                    <span class="total-char">(Note:Upto 300 characters only)</span>
+                    <textarea maxlength="300" name="" id="count-me" cols="15" rows="5" class="form-control mt-2 count-me"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+
+<script>
+    
+    $("#count-me").keyup(function() {
+      var max = $(this).attr('maxlength');
+      var string=  $(this).val();
+      var current = string.length;
+      var leftLength = max - current;
+      if (leftLength<100) {
+          $(this).prev(".total-char").addClass('text-danger');
+      }else{
+          $(this).prev(".total-char").addClass('text-success');
+      }  
+      $(this).prev(".total-char").text('Total '+ leftLength + ' characters are left');
+    });
+
+
+</script>
+</html>

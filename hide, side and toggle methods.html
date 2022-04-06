@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+    <button id="btn-h">Hide</button><br>
+    <button id="btn-s">Show</button>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio voluptates saepe rem repudiandae. Minima officiis, soluta voluptate accusamus sequi velit aliquid quidem voluptatem consequatur iure voluptatibus commodi temporibus omnis natus.Lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia debitis eius est laudantium, doloribus molestiae quidem quod, sed tempore provident illo voluptatum voluptas rerum, sit expedita placeat ad libero voluptatibus.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui debitis fugiat at sint molestiae nulla corrupti voluptate, atque recusandae iusto voluptatem, nobis sit natus deleniti, ut itaque delectus dolor laudantium?
+    </p>
+    <h2 id="p1"></h2>
+    </div>
+    
+</body>
+    <!-- Use jQuery below body tag so that you don't need to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $("#btn-h").on('click',function() {
+           $("p").hide(500,function() {
+               var a = document.getElementById("p1");
+               a.innerHTML += "Paragraph Hidden";
+           }); 
+        });
+        $("#btn-s").on('click',function(){
+            $("p").show(500,function() {
+                var a = document.getElementById("p1");
+                a.innerHTML += "Paragraph unhidden";
+            });
+        });
+    </script>
+</html>

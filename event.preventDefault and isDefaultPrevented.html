@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="http://youtube.com/" target="_blank" id="prevented">Prevented</a>
+        <a href="http://youtube.com/" target="_blank" id="unprevented">Unprevented</a>
+    </div>
+    <h2 id="h2">
+
+    </h2>
+</body>
+    <!-- Use jQuery below body tag so that you don't have to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $('#prevented').click(function(event) {
+           event.preventDefault();  // This will prevent us from redirecting to that website. 
+           var a = document.getElementById('h2');
+            a.innerHTML += event.isDefaultPrevented() + "<br>"; // If the event is prevented, then it will return "true".
+        });
+        
+    </script>
+</html>

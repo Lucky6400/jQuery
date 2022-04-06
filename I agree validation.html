@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I agree validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="col-lg-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email ID</span>
+                </div>
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
+            </div>
+        
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Password</span>
+                </div>
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
+            </div>
+        
+            <div class="mb-3">
+                <input type="checkbox" name="iAgree" id="iAgree">
+                <label for="iAgree">I agree all terms and conditions</label>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" class="btn btn-info" id="submit" disabled="true">
+            </div>
+        </div>
+    </div>
+</body>
+    <!-- Use jQuery below body tag so that you don't have to write document.ready everytime -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
+    </script>
+    <script>
+        $('#iAgree').on('change',function(){
+            var check = $(this).prop('checked');
+            if(check){
+                $('#submit').attr('disabled',false);
+            }else{
+                $('#submit').attr('disabled',true);
+            }
+        });  
+    </script>
+</html>
